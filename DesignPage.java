@@ -2,6 +2,7 @@ package com.vstl.PageFactory;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.vstl.Generic.Pojo;
 
@@ -57,11 +58,12 @@ public class DesignPage {
 
 	public void verifyDesignTextisDisplayedOnDesignPage() {
 
-		if (this.getDesignTextOnDesignPage().equals("Design")) {
+		/* if (this.getDesignTextOnDesignPage().equals("Design")) {
 			System.out.println("Text Design is Displayed");
 		} else {
 			System.out.println("Text Design is Not Displayed");
-		}
+		} */
+		Assert.assertTrue(this.getDesignTextOnDesignPage().equals("Design"));
 
 	}
 }

@@ -1,6 +1,7 @@
 package com.vstl.PageFactory;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.vstl.Generic.Pojo;
 
@@ -21,11 +22,13 @@ public class HomePage {
 
 	public void verifyHomeTextisDisplayed() {
 
-		if (this.getHomeTextOnHomePage().equals("Home")) {
+		/*if (this.getHomeTextOnHomePage().equals("Home_VSTL")) {
 			System.out.println("Text HOME is Displayed");
 		} else {
 			System.out.println("Text HOME is Not Displayed");
-		}
+		} */
+		
+		Assert.assertTrue(this.getHomeTextOnHomePage().equals("Home"));
 
 	}
 

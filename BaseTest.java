@@ -7,14 +7,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class BaseTest extends Pojo {
 
 	private WebDriver driver;
 	private String strURL;
+	private Utilities objUtilities;
+	private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
+
 
 	// Application Invoke
 	public void invokeApplication() {
@@ -26,6 +27,10 @@ public class BaseTest extends Pojo {
 		this.setStrBaseURL(strURL);
 		driver.get(this.getStrBaseURL());
 		this.setDriver(driver);
+		objUtilities = new Utilities();
+		this.setObjUtilities(objUtilities);
+		objSeleniumWrapperFunctions = new SeleniumWrapperFunctions(this);
+		this.setObjSeleniumWrapperFunctions(objSeleniumWrapperFunctions);
 		driver.manage().window().maximize();
 
 	}
@@ -73,13 +78,8 @@ public class BaseTest extends Pojo {
 		}
 	}
 
-	// Mouse Hover
-	public void mouseHover(String strxpathVale) {
-
-		WebElement objWebElement = driver.findElement(By.xpath(strxpathVale));
-		Actions objActions = new Actions(driver);
-		objActions.moveToElement(objWebElement).perform();
-	}
+	
+	
 
 	// Verify HomePage Title
 	public void verifyPageHomeTitle(String getTitleToVerify) {

@@ -1,6 +1,7 @@
 package com.vstl.PageFactory;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.vstl.Generic.Pojo;
 
@@ -21,11 +22,12 @@ public class PortfolioPage {
 
 	public void verifyPortfolioTextisDisplayedOnDashBoardPage() {
 
-		if (this.getPortfolioTextOnDashBoardPortfolioPage().equals("Portfolio")) {
+		/* if (this.getPortfolioTextOnDashBoardPortfolioPage().equals("Portfolio")) {
 			System.out.println("Text Portfolio is Displayed");
 		} else {
 			System.out.println("Text Portfolio is Not Displayed");
-		}
+		} */
+		Assert.assertTrue(this.getPortfolioTextOnDashBoardPortfolioPage().equals("Portfolio"));
 
 	}
 

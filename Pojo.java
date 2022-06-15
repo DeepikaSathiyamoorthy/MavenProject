@@ -7,6 +7,25 @@ public class Pojo {
 	private WebDriver driver;
 	private String strBaseURL;
 	private int intImplicitWait = 0;
+	private Utilities objUtilities;
+
+	public Utilities getObjUtilities() {
+		return objUtilities;
+	}
+
+	public SeleniumWrapperFunctions getObjSeleniumWrapperFunctions() {
+		return objSeleniumWrapperFunctions;
+	}
+
+	public void setObjUtilities(Utilities objUtilities) {
+		this.objUtilities = objUtilities;
+	}
+
+	public void setObjSeleniumWrapperFunctions(SeleniumWrapperFunctions objSeleniumWrapperFunctions) {
+		this.objSeleniumWrapperFunctions = objSeleniumWrapperFunctions;
+	}
+
+	private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
 
 	public WebDriver getDriver() {
 		return driver;
